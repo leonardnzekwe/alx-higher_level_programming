@@ -1,5 +1,3 @@
 #!/usr/bin/python3
-c = 97
-while c <= 122:
-    print(chr(c), end="")
-    c = c + 1
+for c in range(97, 123):
+    print(f"{chr(c)}", end="")
