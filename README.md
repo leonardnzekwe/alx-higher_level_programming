@@ -1,5 +1,5 @@
 # About Repo
-This is alx-higher_level_programming repo
+This is alx-higher_level_programming repository
 
 ## Repo Contents
 - Python - Hello, World
