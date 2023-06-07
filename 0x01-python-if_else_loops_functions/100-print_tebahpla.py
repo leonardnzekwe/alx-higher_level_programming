@@ -4,4 +4,3 @@ for i in range(ord('z'), ord('`'), -1):
         print("{}".format(chr(i).lower()), end='')
     else:
         print("{}".format(chr(i).upper()), end='')
-
