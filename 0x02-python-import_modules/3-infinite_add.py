@@ -5,7 +5,6 @@ if __name__ == "__main__":
     result = 0
     if argc >= 2:
         i = 1
-        result = 0
         while i - 1 < argc:
             result = result + int(argv[i])
             i = i + 1
