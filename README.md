@@ -6,3 +6,4 @@ This is alx-higher_level_programming repository
 - Python - if/else, loops, functions
 - Python - import & modules
 - Python - Data Structures: Lists, Tuples
+- Python - More Data Structures: Set, Dictionary
