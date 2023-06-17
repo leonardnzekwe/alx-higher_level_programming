@@ -10,14 +10,25 @@
 
 int is_palindrome(listint_t **head)
 {
-	listint_t *ptr;
-	int i, j;
-	int nodes_data[10];
+	listint_t *ptr, *ptr2;
+	int i, j, num_nodes;
+	int *nodes_data;
 
-	if (*head == NULL)
-		return (0);
+	if (*head == NULL) /* empty list case section */
+		return (1);
 
-	ptr = *head;
+	ptr2 = *head; /* section for dynamic memory alloc for an array of integers */
+	num_nodes = 0;
+	while (ptr2 != NULL)
+	{
+		num_nodes = num_nodes + 1;
+		ptr2 = ptr2->next;
+	}
+	nodes_data = malloc(sizeof(int) * num_nodes);
+	if (nodes_data == NULL)
+		return (1);
+
+	ptr = *head; /* section that stores the data of each node in an array */
 	i = 0;
 	while (ptr != NULL)
 	{
@@ -26,7 +37,7 @@ int is_palindrome(listint_t **head)
 		ptr = ptr->next;
 	}
 
-	j = 0;
+	j = 0; /* section that checks if array values reads same to & fro */
 	i = i - 1;
 	while (i >= 0)
 	{
