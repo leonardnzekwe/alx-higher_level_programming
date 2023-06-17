@@ -10,20 +10,12 @@
 
 int is_palindrome(listint_t **head)
 {
-	listint_t *ptr, *ptr2;
-	int i, j, num_nodes;
+	listint_t *ptr;
+	int i, j;
+	int nodes_data[10];
 
 	if (*head == NULL)
 		return (0);
-
-	ptr2 = *head;
-	num_nodes = 0;
-	while (ptr2 != NULL)
-	{
-		num_nodes = num_nodes + 1;
-		ptr2 = ptr2->next;
-	}
-	int nodes_data[num_nodes];
 
 	ptr = *head;
 	i = 0;
