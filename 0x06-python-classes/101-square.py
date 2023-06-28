@@ -69,8 +69,7 @@ class Square:
         """Special method that returns a string representation of an object"""
         obj_str_rep = ""
         if self.size == 0:
-            print()
-            return
+            return obj_str_rep
 
         for _ in range(self.position[1]):
             obj_str_rep += "\n"
