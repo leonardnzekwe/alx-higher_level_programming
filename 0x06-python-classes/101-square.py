@@ -78,4 +78,4 @@ class Square:
         for _ in range(self.size):
             obj_str_rep += (" " * self.position[0]) + ("#" * self.size) + "\n"
 
-        return obj_str_rep
+        return obj_str_rep[:-1]
