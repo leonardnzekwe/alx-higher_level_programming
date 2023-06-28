@@ -30,7 +30,7 @@ class Square:
         that returns the current square area
         """
         return self.size * self.size
-    
+
     def __eq__(self, other):
         """Override the equality operator (==)"""
         if isinstance(other, Square):
