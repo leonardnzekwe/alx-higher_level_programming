@@ -1,4 +1,4 @@
-"""0-add_integer Tests"""
+"""0-add_integer Module Tests"""
 
 """
 >>> from sys import path
