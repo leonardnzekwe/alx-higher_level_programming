@@ -1,52 +1,49 @@
 """2-matrix_divided Module Tests"""
 
 """
->>> from sys import path
->>> path.append("../.")
->>> from importlib import import_module
->>> module = import_module("2-matrix_divided")
+>>> matrix_divided = __import__("2-matrix_divided").matrix_divided
 >>> matrix = [[1, 2, 3], [4, 5, 6]]
->>> module.matrix_divided(matrix, 3)
+>>> matrix_divided(matrix, 3)
 [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
->>> module.matrix_divided(matrix, 3.5)
+>>> matrix_divided(matrix, 3.5)
 [[0.29, 0.57, 0.86], [1.14, 1.43, 1.71]]
->>> module.matrix_divided([], 3)
+>>> matrix_divided([], 3)
 Traceback (most recent call last):
 ...
 TypeError: matrix must be a matrix (list of lists) of integers/floats
->>> module.matrix_divided(matrix, 0)
+>>> matrix_divided(matrix, 0)
 Traceback (most recent call last):
 ...
 ZeroDivisionError: division by zero
->>> module.matrix_divided(matrix, "leo")
+>>> matrix_divided(matrix, "leo")
 Traceback (most recent call last):
 ...
 TypeError: div must be a number
->>> module.matrix_divided([[1,2,3],[1,2,3],[1,2]], 3)
+>>> matrix_divided([[1,2,3],[1,2,3],[1,2]], 3)
 Traceback (most recent call last):
 ...
 TypeError: Each row of the matrix must have the same size
->>> module.matrix_divided([[1,2,3],[1,2,3],[1,2,'leo']], 3)
+>>> matrix_divided([[1,2,3],[1,2,3],[1,2,'leo']], 3)
 Traceback (most recent call last):
 ...
 TypeError: matrix must be a matrix (list of lists) of integers/floats
->>> module.matrix_divided(matrix, None)
+>>> matrix_divided(matrix, None)
 Traceback (most recent call last):
 ...
 TypeError: div must be a number
->>> module.matrix_divided(None, 3)
+>>> matrix_divided(None, 3)
 Traceback (most recent call last):
 ...
 TypeError: matrix must be a matrix (list of lists) of integers/floats
->>> module.matrix_divided("leo", 3)
+>>> matrix_divided("leo", 3)
 Traceback (most recent call last):
 ...
 TypeError: matrix must be a matrix (list of lists) of integers/floats
->>> module.matrix_divided([[1,2,3],[1,2,3],"leo"], 3)
+>>> matrix_divided([[1,2,3],[1,2,3],"leo"], 3)
 Traceback (most recent call last):
 ...
 TypeError: matrix must be a matrix (list of lists) of integers/floats
->>> module.matrix_divided([[1,2,3],[1,2,3],23], 3)
+>>> matrix_divided([[1,2,3],[1,2,3],23], 3)
 Traceback (most recent call last):
 ...
 TypeError: matrix must be a matrix (list of lists) of integers/floats

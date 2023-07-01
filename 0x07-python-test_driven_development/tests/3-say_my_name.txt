@@ -1,39 +1,36 @@
 """3-say_my_name Module Tests"""
 
 """
->>> from sys import path
->>> path.append("../.")
->>> from importlib import import_module
->>> module = import_module("3-say_my_name")
->>> module.say_my_name("Leo", "Nze")
+>>> say_my_name = __import__("3-say_my_name").say_my_name
+>>> say_my_name("Leo", "Nze")
 My name is Leo Nze
->>> module.say_my_name("Leo", 12)
+>>> say_my_name("Leo", 12)
 Traceback (most recent call last):
 ...
 TypeError: last_name must be a string
->>> module.say_my_name(12, "Nze")
+>>> say_my_name(12, "Nze")
 Traceback (most recent call last):
 ...
 TypeError: first_name must be a string
->>> module.say_my_name(None, "Nze")
+>>> say_my_name(None, "Nze")
 Traceback (most recent call last):
 ...
 TypeError: first_name must be a string
->>> module.say_my_name("Leo", None)
+>>> say_my_name("Leo", None)
 Traceback (most recent call last):
 ...
 TypeError: last_name must be a string
->>> module.say_my_name(None, None)
+>>> say_my_name(None, None)
 Traceback (most recent call last):
 ...
 TypeError: first_name must be a string
->>> module.say_my_name(None)
+>>> say_my_name(None)
 Traceback (most recent call last):
 ...
 TypeError: first_name must be a string
->>> module.say_my_name("Leo")
-My name is Leo
->>> module.say_my_name(12)
+>>> say_my_name("Leo", "Leo")
+My name is Leo Leo
+>>> say_my_name(12)
 Traceback (most recent call last):
 ...
 TypeError: first_name must be a string
