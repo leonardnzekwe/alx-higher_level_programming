@@ -7,3 +7,6 @@ This is alx-higher_level_programming repository
 - Python - import & modules
 - Python - Data Structures: Lists, Tuples
 - Python - More Data Structures: Set, Dictionary
+- Python - Exceptions
+- Python - Classes and Objects
+- Python - Test-driven development
