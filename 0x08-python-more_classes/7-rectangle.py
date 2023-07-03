@@ -63,9 +63,9 @@ class Rectangle:
         i = 1
         while i <= self.height:
             if self.print_symbol is None:
-                text += str(Rectangle.print_symbol * self.width)
+                text += (str(Rectangle.print_symbol) * self.width)
             else:
-                text += str(self.print_symbol * self.width)
+                text += (str(self.print_symbol) * self.width)
             if i + 1 <= self.height:
                 text += "\n"
             i += 1
