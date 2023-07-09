@@ -13,4 +13,4 @@ def matrix_mul(m_a, m_b):
     if (
             m_a is None or
             type(m_a) != list or
-
+           
