@@ -10,9 +10,9 @@ def matrix_mul(m_a, m_b):
     """
     matrix_mul function
     """
-    if type(m_a) != list:
+    if m_a is None or type(m_a) != list:
         raise TypeError("m_a must be a list")
-    if type(m_b) != list:
+    if m_b is None or type(m_b) != list:
         raise TypeError("m_b must be a list")
     if any(type(row) != list for row in m_a):
         raise TypeError("m_a must be a list of lists")
