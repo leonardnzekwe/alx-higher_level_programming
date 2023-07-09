@@ -1,0 +1,25 @@
+"""100-matrix_mul Module Test"""
+
+"""
+>>> lazy_matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
+>>> lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]])
+array([[ 7, 10],
+       [15, 22]])
+>>> lazy_matrix_mul([[1, 2], [3, 4]], 'leo')
+Traceback (most recent call last):
+...
+ValueError: Scalar operands are not allowed, use '*' instead
+>>> lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], 'leo'])
+Traceback (most recent call last):
+...
+TypeError: Object arrays are not currently supported
+>>> lazy_matrix_mul([[1, 2], [3, 4]], [])
+Traceback (most recent call last):
+...
+ValueError: shapes (2,2) and (0,) not aligned: 2 (dim 1) != 0 (dim 0)
+>>> lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [3]])
+Traceback (most recent call last):
+...
+TypeError: Object arrays are not currently supported
+>>>
+"""
