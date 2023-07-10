@@ -5,17 +5,16 @@ contains print_sorted(self) function
 that prints the list, but sorted (ascending sort)
 """
 
-
-class MyList(list):
-    """
-    MyList class
-    """
-    try:
+try:
+    class MyList(list):
+        """
+        MyList class
+        """
         def print_sorted(self):
             """
             print_sorted function
             """
             new_list = sorted(self)
             print(new_list)
-    except Exception as err:
-        raise type(err)(str(err))
+except Exception as err:
+    raise type(err)(str(err))
