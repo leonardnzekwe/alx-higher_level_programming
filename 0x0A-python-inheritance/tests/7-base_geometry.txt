@@ -67,5 +67,17 @@ TypeError: BaseGeometry() takes no arguments
 ... except Exception as e:
 ...     print("[{}] {}".format(e.__class__.__name__, e))
 ... 
+>>> bg.integer_validator()
+Traceback (most recent call last):
+...
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+>>> bg.__doc__
+'\n    BaseGeometry class\n    '
+>>> bg.integer_validator.__doc__
+'\n        integer_validator function\n        '
+>>> BaseGeometry.__doc__
+'\n    BaseGeometry class\n    '
+>>> bg.area.__doc__
+'\n        area function\n        '
 >>>
 """
