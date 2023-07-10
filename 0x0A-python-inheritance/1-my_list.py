@@ -14,6 +14,7 @@ try:
             """
             print_sorted function
             """
+            new_list = []
             new_list = sorted(self)
             print(new_list)
 except Exception as err:
