@@ -17,5 +17,24 @@
 >>> new_list = MyList()
 >>> new_list.print_sorted()
 []
+>>> my_list = MyList([1,4,5,3,2])
+>>> my_list
+[1, 4, 5, 3, 2]
+>>> my_list = MyList("leo")
+>>> my_list
+['l', 'e', 'o']
+>>> my_list.print_sorted()
+['e', 'l', 'o']
+>>> my_list = MyList([1,4,5,3,2])
+>>> my_list
+[1, 4, 5, 3, 2]
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 5]
+>>> my_list = MyList([1])
+>>> my_list = MyList([1])
+>>> my_list
+[1]
+>>> my_list.print_sorted()
+[1]
 >>>
 """
