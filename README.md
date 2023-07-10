@@ -12,3 +12,4 @@ This is alx-higher_level_programming repository
 - Python - Test-driven development
 - Python - More Classes and Objects
 - Python - Everything is object
+- Python - Inheritance
