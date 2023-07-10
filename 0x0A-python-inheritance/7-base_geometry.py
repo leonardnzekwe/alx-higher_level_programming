@@ -20,10 +20,7 @@ class BaseGeometry:
         """
         integer_validator function
         """
-        try:
-            if not isinstance(value, int):
-                raise TypeError("{} must be an integer".format(name))
-            if value <= 0:
-                raise ValueError("{} must be greater than 0".format(name))
-        except Exception as err:
-            raise (type(err))(str(err))
+        if type(value) != int:
+            raise TypeError("{} must be an integer".format(name))
+        if value <= 0:
+            raise ValueError("{} must be greater than 0".format(name))
