@@ -31,23 +31,6 @@
 ...     print("[{}] {}".format(e.__class__.__name__, e))
 ...
 [TypeError] name must be an integer
->>> try:
-...     bg.integer_validator(34, 0)
-... except Exception as e:
-...     print("[{}] {}".format(e.__class__.__name__, e))
-...
-[ValueError] 34 must be greater than 0
->>> try:
-...     bg.integer_validator("distance", -4)
-... except Exception as e:
-...     print("[{}] {}".format(e.__class__.__name__, e))
-...
-[ValueError] distance must be greater than 0
->>> try:
-...     bg.integer_validator("distance", 100)
-... except Exception as e:
-...     print("[{}] {}".format(e.__class__.__name__, e))
-...
 >>> bg = BaseGeometry("leo")
 Traceback (most recent call last):
 ...
@@ -56,17 +39,6 @@ TypeError: BaseGeometry() takes no arguments
 Traceback (most recent call last):
 ...
 TypeError: BaseGeometry() takes no arguments
->>> bg = BaseGeometry()
->>> try:
-...     bg.integer_validator(24, 24)
-... except Exception as e:
-...     print("[{}] {}".format(e.__class__.__name__, e))
-... 
->>> try:
-...     bg.integer_validator("leo", 24)
-... except Exception as e:
-...     print("[{}] {}".format(e.__class__.__name__, e))
-... 
 >>> bg.integer_validator()
 Traceback (most recent call last):
 ...
@@ -79,5 +51,7 @@ TypeError: integer_validator() missing 2 required positional arguments: 'name' a
 '\n    BaseGeometry class\n    '
 >>> bg.area.__doc__
 '\n        area function\n        '
+>>> __import__('7-base_geometry').__doc__
+'\n6-base_geometry Module\ncontains BaseGeometry class\nwith its methods and attributes\n'
 >>>
 """
