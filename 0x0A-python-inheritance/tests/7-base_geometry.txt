@@ -48,5 +48,13 @@
 ... except Exception as e:
 ...     print("[{}] {}".format(e.__class__.__name__, e))
 ...
+>>> bg = BaseGeometry("leo")
+Traceback (most recent call last):
+...
+TypeError: BaseGeometry() takes no arguments
+>>> bg = BaseGeometry(23)
+Traceback (most recent call last):
+...
+TypeError: BaseGeometry() takes no arguments
 >>>
 """
