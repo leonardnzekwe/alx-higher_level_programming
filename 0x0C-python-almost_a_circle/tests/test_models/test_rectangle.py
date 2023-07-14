@@ -4,11 +4,13 @@ rectangle module test
 """
 
 
-import unittest
 from models.rectangle import Rectangle
+from unittest import TestCase
+from unittest.mock import patch
+from io import StringIO
 
 
-class TestRectangle(unittest.TestCase):
+class TestRectangle(TestCase):
     """
     TestRectangle class
     """
@@ -21,6 +23,7 @@ class TestRectangle(unittest.TestCase):
         cls.r2 = Rectangle(2, 5)
         cls.r3 = Rectangle(10, 2, 0, 0, 12)
         cls.r4 = Rectangle(12, 23)
+        cls.r5 = Rectangle(3, 2)
 
     @classmethod
     def tearDownClass(cls):
@@ -28,7 +31,6 @@ class TestRectangle(unittest.TestCase):
         tearDownClass method
         """
         del cls.r1, cls.r2, cls.r3, cls.r4
-
 
     def test_rectangle_not_none(self):
         """
@@ -80,3 +82,11 @@ class TestRectangle(unittest.TestCase):
         """
         self.assertEqual(self.r1.area(), 20)
         self.assertEqual(self.r2.area(), 10)
+
+    def test_rectangle_display(self):
+        """
+        test_rectangle_area method
+        """
+        with patch('sys.stdout', new=StringIO()) as output:
+            self.r5.display()
+            self.assertEqual(output.getvalue(), "###\n###\n")
