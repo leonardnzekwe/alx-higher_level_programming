@@ -80,7 +80,7 @@ class Rectangle(Base):
         """
         y getter method
         """
-        return self.__x
+        return self.__y
 
     @y.setter
     def y(self, value):
@@ -105,3 +105,9 @@ class Rectangle(Base):
         """
         for _ in range(self.height):
             print("#" * self.width)
+
+    def __str__(self):
+        """
+        str method
+        """
+        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"

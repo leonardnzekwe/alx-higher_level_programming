@@ -90,3 +90,9 @@ class TestRectangle(TestCase):
         with patch('sys.stdout', new=StringIO()) as output:
             self.r5.display()
             self.assertEqual(output.getvalue(), "###\n###\n")
+
+    def test_rectangle_str(self):
+        """
+        test_rectangle_str method
+        """
+        self.assertIsNotNone(str(self.r5))
