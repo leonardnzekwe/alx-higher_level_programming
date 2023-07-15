@@ -24,13 +24,14 @@ class TestRectangle(TestCase):
         cls.r3 = Rectangle(10, 2, 0, 0, 12)
         cls.r4 = Rectangle(12, 23)
         cls.r5 = Rectangle(3, 2)
+        cls.r6 = Rectangle(10, 10, 10, 10)
 
     @classmethod
     def tearDownClass(cls):
         """
         tearDownClass method
         """
-        del cls.r1, cls.r2, cls.r3, cls.r4, cls.r5
+        del cls.r1, cls.r2, cls.r3, cls.r4, cls.r5, cls.r6
 
     def test_rectangle_not_none(self):
         """
@@ -96,3 +97,18 @@ class TestRectangle(TestCase):
         test_rectangle_str method
         """
         self.assertIsNotNone(str(self.r5))
+
+    def test_rectangle_updating(self):
+        """
+        test_rectangle_updating method
+        """
+        self.r6.update(89)
+        self.assertEqual(self.r6.id, 89)
+        self.r6.update(89, 2)
+        self.assertEqual(self.r6.width, 2)
+        self.r6.update(89, 2, 3)
+        self.assertEqual(self.r6.height, 3)
+        self.r6.update(89, 2, 3, 4)
+        self.assertEqual(self.r6.x, 4)
+        self.r6.update(89, 2, 3, 4, 5)
+        self.assertEqual(self.r6.y, 5)
