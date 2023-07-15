@@ -6,6 +6,7 @@ base module test
 from unittest import TestCase
 from models.base import Base
 from models.rectangle import Rectangle
+from models.square import Square
 
 
 class TestBase(TestCase):
@@ -84,3 +85,27 @@ class TestBase(TestCase):
         r1_dictionary = r1.to_dictionary()
         r2 = Rectangle.create(**r1_dictionary)
         self.assertNotEqual(r1, r2)
+
+    def test_base_load_from_file(self):
+        """
+        test_base_load_from_file method
+        """
+        r1 = Rectangle(10, 7, 2, 8)
+        r2 = Rectangle(2, 4)
+        list_rect_input = [r1, r2]
+        Rectangle.save_to_file(list_rect_input)
+        list_rect_output = Rectangle.load_from_file()
+        self.assertNotEqual(id(list_rect_input[0]), id(list_rect_input[1]))
+        self.assertNotEqual(list_rect_input[0], list_rect_input[1])
+        self.assertNotEqual(id(list_rect_output[0]), id(list_rect_output[1]))
+        self.assertNotEqual(list_rect_output[0], list_rect_output[1])
+
+        s1 = Square(5)
+        s2 = Square(7, 9, 1)
+        list_sqr_input = [s1, s2]
+        Square.save_to_file(list_sqr_input)
+        list_sqr_output = Square.load_from_file()
+        self.assertIsNot(list_sqr_input[0], list_sqr_input[1])
+        self.assertNotEqual(list_sqr_input[0], list_sqr_input[1])
+        self.assertIsNot(list_sqr_output[0], list_sqr_output[1])
+        self.assertNotEqual(list_sqr_output[0], list_sqr_output[1])

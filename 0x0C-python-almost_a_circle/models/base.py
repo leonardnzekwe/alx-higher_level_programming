@@ -38,15 +38,12 @@ class Base:
         save_to_file method
         """
         dict_list = []
-        if list_objs is not None and len(list_objs) != 0:
-            filename = type(list_objs[0]).__name__ + ".json"
+        filename = cls.__name__ + ".json"
+        if list_objs is not None:
             for obj in list_objs:
                 dict_list.append(obj.to_dictionary())
-        else:
-            filename = type(list_objs).__name__ + ".json"
-
         with open(filename, "w", encoding="utf-8") as f:
-            json_string = Base.to_json_string(dict_list)
+            json_string = cls.to_json_string(dict_list)
             f.write(json_string)
 
     @staticmethod
@@ -64,7 +61,20 @@ class Base:
         """
         create method
         """
-        from models.rectangle import Rectangle
-        cls.dummy = Rectangle(5, 5)
+        cls.dummy = cls(5, 5)
         cls.dummy.update(**dictionary)
         return cls.dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """
+        load_from_file method
+        """
+        instances = []
+        filename = cls.__name__ + ".json"
+        with open(filename, "r", encoding="utf-8") as f:
+            json_string = f.read()
+            objs_list = cls.from_json_string(json_string)
+        for obj in objs_list:
+            instances.append(cls.create(**obj))
+        return instances
