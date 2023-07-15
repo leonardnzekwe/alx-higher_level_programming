@@ -58,3 +58,13 @@ class Base:
         if json_string is None or len(json_string) == 0:
             return py_list
         return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """
+        create method
+        """
+        from models.rectangle import Rectangle
+        cls.dummy = Rectangle(5, 5)
+        cls.dummy.update(**dictionary)
+        return cls.dummy

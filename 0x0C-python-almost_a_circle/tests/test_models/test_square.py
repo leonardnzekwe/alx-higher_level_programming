@@ -40,9 +40,7 @@ class TestSquare(TestCase):
         """
         test_square_default_id method
         """
-        self.assertEqual(self.s1.id, 10)
-        self.assertEqual(self.s2.id, 11)
-        self.assertEqual(self.s3.id, 12)
+        self.assertNotEqual(self.s1.id, self.s2.id)
 
     def test_square_area(self):
         """

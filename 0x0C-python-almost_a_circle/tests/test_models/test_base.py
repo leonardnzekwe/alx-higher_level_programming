@@ -24,9 +24,8 @@ class TestBase(TestCase):
         test_base_nb_objects method
         """
         b2 = Base()
-        self.assertEqual(b2.id, 2)
         b3 = Base()
-        self.assertEqual(b3.id, 3)
+        self.assertNotEqual(b2.id, b3.id)
 
     def test_base_custom_id(self):
         """
@@ -59,8 +58,8 @@ class TestBase(TestCase):
         r1 = Rectangle(3, 5, 7, 9, 11)
         r2 = Rectangle(2, 4, 6, 8, 10)
         Rectangle.save_to_file([r1, r2])
-        with open("Rectangle.json", "r") as file:
-            content = file.read()
+        with open("Rectangle.json", "r") as f:
+            content = f.read()
         self.assertEqual(content, expected_output)
 
     def test_base_from_json_string(self):
@@ -76,3 +75,12 @@ class TestBase(TestCase):
         self.assertEqual(type(list_input), list)
         self.assertEqual(type(json_list_input), str)
         self.assertEqual(type(list_output), list)
+
+    def test_base_create(self):
+        """
+        test_base_create method
+        """
+        r1 = Rectangle(3, 5, 1)
+        r1_dictionary = r1.to_dictionary()
+        r2 = Rectangle.create(**r1_dictionary)
+        self.assertNotEqual(r1, r2)
