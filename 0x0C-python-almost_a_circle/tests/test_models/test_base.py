@@ -3,12 +3,12 @@
 base module test
 """
 
-import unittest
+from unittest import TestCase
 from models.base import Base
 from models.rectangle import Rectangle
 
 
-class TestBase(unittest.TestCase):
+class TestBase(TestCase):
     """
     TestBase class
     """
@@ -45,3 +45,20 @@ class TestBase(unittest.TestCase):
         json_dictionary = Base.to_json_string([dictionary])
         self.assertEqual(type(dictionary), dict)
         self.assertEqual(type(json_dictionary), str)
+        r1 = Rectangle(3, 5, 7, 9, 11)
+        r2 = Rectangle(2, 4, 6, 8, 10)
+
+    def test_base_save_to_file(self):
+        """
+        test_base_save_to_file method
+        """
+        expected_output = (
+            '[{"x": 7, "y": 9, "id": 11, "height": 5, "width": 3}, ' +
+            '{"x": 6, "y": 8, "id": 10, "height": 4, "width": 2}]'
+            )
+        r1 = Rectangle(3, 5, 7, 9, 11)
+        r2 = Rectangle(2, 4, 6, 8, 10)
+        Rectangle.save_to_file([r1, r2])
+        with open("Rectangle.json", "r") as file:
+            content = file.read()
+        self.assertEqual(content, expected_output)
