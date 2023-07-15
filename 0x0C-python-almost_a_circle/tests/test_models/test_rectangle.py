@@ -30,7 +30,7 @@ class TestRectangle(TestCase):
         """
         tearDownClass method
         """
-        del cls.r1, cls.r2, cls.r3, cls.r4
+        del cls.r1, cls.r2, cls.r3, cls.r4, cls.r5
 
     def test_rectangle_not_none(self):
         """
