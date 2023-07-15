@@ -39,3 +39,29 @@ class Square(Rectangle):
         obj str rep method
         """
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
+
+    def update(self, *args, **kwargs):
+        """
+        update method
+        """
+        no_of_args = len(args)
+
+        if no_of_args != 0:
+            if no_of_args >= 1:
+                self.id = args[0]
+            if no_of_args >= 2:
+                self.size = args[1]
+            if no_of_args >= 3:
+                self.x = args[2]
+            if no_of_args >= 4:
+                self.y = args[3]
+        else:
+            for key, value in kwargs.items():
+                if key == "id":
+                    self.id = value
+                if key == "size":
+                    self.size = value
+                if key == "x":
+                    self.x = value
+                if key == "y":
+                    self.y = value

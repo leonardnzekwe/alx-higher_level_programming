@@ -94,3 +94,31 @@ class TestSquare(TestCase):
 
         with self.assertRaises(TypeError):
             self.s5.size = "9"
+
+    def test_square_update(self):
+        """
+        test_square_update method
+        """
+        self.s5.update(10)
+        self.assertEqual(self.s5.id, 10)
+        self.s5.update(1, 2)
+        self.assertEqual(self.s5.id, 1)
+        self.assertEqual(self.s5.size, 2)
+        self.s5.update(1, 2, 3)
+        self.assertEqual(self.s5.id, 1)
+        self.assertEqual(self.s5.size, 2)
+        self.assertEqual(self.s5.x, 3)
+        self.s5.update(1, 2, 3, 4)
+        self.assertEqual(self.s5.id, 1)
+        self.assertEqual(self.s5.size, 2)
+        self.assertEqual(self.s5.x, 3)
+        self.assertEqual(self.s5.y, 4)
+        self.s5.update(x=12)
+        self.assertEqual(self.s5.x, 12)
+        self.s5.update(size=7, y=1)
+        self.assertEqual(self.s5.size, 7)
+        self.assertEqual(self.s5.y, 1)
+        self.s5.update(size=7, id=89, y=1)
+        self.assertEqual(self.s5.size, 7)
+        self.assertEqual(self.s5.y, 1)
+        self.assertEqual(self.s5.id, 89)

@@ -132,3 +132,12 @@ class TestRectangle(TestCase):
         self.assertEqual(self.r6.height, 2)
         self.assertEqual(self.r6.y, 3)
         self.assertEqual(self.r6.width, 4)
+
+    def test_rectangle_to_dictionary(self):
+        """
+        test_rectangle_to_dictionary method
+        """
+        r1_dictionary = self.r1.to_dictionary()
+        self.assertEqual(type(r1_dictionary), dict)
+        self.r2.update(**r1_dictionary)
+        self.assertNotEqual(self.r1, self.r2)
