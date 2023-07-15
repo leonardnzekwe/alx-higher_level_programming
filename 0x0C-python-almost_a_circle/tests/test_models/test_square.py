@@ -70,6 +70,11 @@ class TestSquare(TestCase):
         """
         self.assertEqual(self.s3.width, 3)
         self.assertEqual(self.s3.height, 3)
+        self.assertEqual(self.s3.size, 3)
+        self.s3.size = 10
+        self.assertEqual(self.s3.size, 10)
+        self.assertEqual(self.s3.height, 10)
+        self.assertEqual(self.s3.width, 10)
 
     def test_square_raises(self):
         """
@@ -86,3 +91,6 @@ class TestSquare(TestCase):
 
         with self.assertRaises(ValueError):
             self.s5.height = -1
+
+        with self.assertRaises(TypeError):
+            self.s5.size = "9"
