@@ -5,6 +5,7 @@ base module test
 
 import unittest
 from models.base import Base
+from models.rectangle import Rectangle
 
 
 class TestBase(unittest.TestCase):
@@ -34,3 +35,13 @@ class TestBase(unittest.TestCase):
         custom_id = 12
         b = Base(custom_id)
         self.assertEqual(b.id, custom_id)
+
+    def test_base_to_json_string(self):
+        """
+        test_base_to_json_string method
+        """
+        r1 = Rectangle(10, 7, 2, 8)
+        dictionary = r1.to_dictionary()
+        json_dictionary = Base.to_json_string([dictionary])
+        self.assertEqual(type(dictionary), dict)
+        self.assertEqual(type(json_dictionary), str)
