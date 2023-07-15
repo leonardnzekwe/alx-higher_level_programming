@@ -122,3 +122,12 @@ class TestSquare(TestCase):
         self.assertEqual(self.s5.size, 7)
         self.assertEqual(self.s5.y, 1)
         self.assertEqual(self.s5.id, 89)
+
+    def test_square_to_dictionary(self):
+        """
+        test_square_to_dictionary
+        """
+        s1_dictionary = self.s1.to_dictionary()
+        self.assertEqual(type(s1_dictionary), dict)
+        self.s2.update(**s1_dictionary)
+        self.assertNotEqual(self.s1, self.s2)
