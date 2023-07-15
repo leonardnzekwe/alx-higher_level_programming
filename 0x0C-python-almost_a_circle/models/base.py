@@ -48,3 +48,13 @@ class Base:
         with open(filename, "w", encoding="utf-8") as f:
             json_string = Base.to_json_string(dict_list)
             f.write(json_string)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """
+        from_json_string method
+        """
+        py_list = []
+        if json_string is None or len(json_string) == 0:
+            return py_list
+        return json.loads(json_string)
