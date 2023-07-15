@@ -98,9 +98,9 @@ class TestRectangle(TestCase):
         """
         self.assertIsNotNone(str(self.r5))
 
-    def test_rectangle_updating(self):
+    def test_rectangle_update_args(self):
         """
-        test_rectangle_updating method
+        test_rectangle_update_args method
         """
         self.r6.update(89)
         self.assertEqual(self.r6.id, 89)
@@ -112,3 +112,23 @@ class TestRectangle(TestCase):
         self.assertEqual(self.r6.x, 4)
         self.r6.update(89, 2, 3, 4, 5)
         self.assertEqual(self.r6.y, 5)
+
+    def test_rectangle_update_kwargs(self):
+        """
+        test_rectangle_update_kwargs method
+        """
+        self.r6.update(height=1)
+        self.assertEqual(self.r6.height, 1)
+        self.r6.update(width=1, x=2)
+        self.assertEqual(self.r6.width, 1)
+        self.assertEqual(self.r6.x, 2)
+        self.r6.update(y=1, width=2, x=3, id=89)
+        self.assertEqual(self.r6.y, 1)
+        self.assertEqual(self.r6.width, 2)
+        self.assertEqual(self.r6.x, 3)
+        self.assertEqual(self.r6.id, 89)
+        self.r6.update(x=1, height=2, y=3, width=4)
+        self.assertEqual(self.r6.x, 1)
+        self.assertEqual(self.r6.height, 2)
+        self.assertEqual(self.r6.y, 3)
+        self.assertEqual(self.r6.width, 4)
