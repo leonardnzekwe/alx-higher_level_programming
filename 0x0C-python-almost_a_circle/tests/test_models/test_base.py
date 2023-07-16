@@ -109,3 +109,42 @@ class TestBase(TestCase):
         self.assertNotEqual(list_sqr_input[0], list_sqr_input[1])
         self.assertIsNot(list_sqr_output[0], list_sqr_output[1])
         self.assertNotEqual(list_sqr_output[0], list_sqr_output[1])
+
+    def test_base_save_to_file_csv(self):
+        """
+        test_base_save_to_file_csv method
+        """
+        expected_output = (
+            '[{"x": 7, "y": 9, "id": 11, "height": 5, "width": 3}, ' +
+            '{"x": 6, "y": 8, "id": 10, "height": 4, "width": 2}]'
+            )
+        r1 = Rectangle(3, 5, 7, 9, 11)
+        r2 = Rectangle(2, 4, 6, 8, 10)
+        Rectangle.save_to_file_csv([r1, r2])
+        with open("Rectangle.csv", "r") as f:
+            content = f.read()
+        self.assertEqual(content, expected_output)
+
+    def test_base_load_from_file_csv(self):
+        """
+        test_base_load_from_file_csv method
+        """
+        r1 = Rectangle(10, 7, 2, 8)
+        r2 = Rectangle(2, 4)
+        list_rect_input = [r1, r2]
+        Rectangle.save_to_file_csv(list_rect_input)
+        list_rect_output = Rectangle.load_from_file_csv()
+        self.assertNotEqual(id(list_rect_input[0]), id(list_rect_input[1]))
+        self.assertNotEqual(list_rect_input[0], list_rect_input[1])
+        self.assertNotEqual(id(list_rect_output[0]), id(list_rect_output[1]))
+        self.assertNotEqual(list_rect_output[0], list_rect_output[1])
+
+        s1 = Square(5)
+        s2 = Square(7, 9, 1)
+        list_sqr_input = [s1, s2]
+        Square.save_to_file_csv(list_sqr_input)
+        list_sqr_output = Square.load_from_file_csv()
+        self.assertIsNot(list_sqr_input[0], list_sqr_input[1])
+        self.assertNotEqual(list_sqr_input[0], list_sqr_input[1])
+        self.assertIsNot(list_sqr_output[0], list_sqr_output[1])
+        self.assertNotEqual(list_sqr_output[0], list_sqr_output[1])
