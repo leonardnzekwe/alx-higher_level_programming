@@ -61,9 +61,9 @@ class Base:
         """
         create method
         """
-        cls.dummy = cls(5, 5)
-        cls.dummy.update(**dictionary)
-        return cls.dummy
+        dummy = cls(5, 5)
+        dummy.update(**dictionary)
+        return dummy
 
     @classmethod
     def load_from_file(cls):
