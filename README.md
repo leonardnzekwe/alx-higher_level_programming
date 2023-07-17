@@ -14,3 +14,4 @@ This is alx-higher_level_programming repository
 - Python - Everything is object
 - Python - Inheritance
 - Python - Input/Output
+- 0x0C. Python - Almost a circle
