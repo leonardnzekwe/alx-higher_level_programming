@@ -129,3 +129,21 @@ class TestSquare(TestCase):
         self.assertEqual(type(s1_dictionary), dict)
         self.s2.update(**s1_dictionary)
         self.assertNotEqual(self.s1, self.s2)
+
+    def test_documentations(self):
+        """
+        test_documentations
+        """
+        from models import square
+        self.assertIsNotNone(square.__doc__)
+        self.assertGreater(len(square.__doc__), 5)
+        self.assertIsNotNone(Square.__init__.__doc__)
+        self.assertGreater(len(Square.__init__.__doc__), 5)
+        self.assertIsNotNone(Square.size.__doc__)
+        self.assertGreater(len(Square.size.__doc__), 5)
+        self.assertIsNotNone(Square.__str__.__doc__)
+        self.assertGreater(len(Square.__str__.__doc__), 5)
+        self.assertIsNotNone(Square.update.__doc__)
+        self.assertGreater(len(Square.update.__doc__), 5)
+        self.assertIsNotNone(Square.to_dictionary.__doc__)
+        self.assertGreater(len(Square.to_dictionary.__doc__), 5)

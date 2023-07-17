@@ -148,3 +148,29 @@ class TestBase(TestCase):
         self.assertNotEqual(list_sqr_input[0], list_sqr_input[1])
         self.assertIsNot(list_sqr_output[0], list_sqr_output[1])
         self.assertNotEqual(list_sqr_output[0], list_sqr_output[1])
+
+    def test_documentations(self):
+        """
+        test_documentations
+        """
+        from models import base
+        self.assertIsNotNone(base.__doc__)
+        self.assertGreater(len(base.__doc__), 5)
+        self.assertIsNotNone(Base.__init__.__doc__)
+        self.assertGreater(len(Base.__init__.__doc__), 5)
+        self.assertIsNotNone(Base.to_json_string.__doc__)
+        self.assertGreater(len(Base.to_json_string.__doc__), 5)
+        self.assertIsNotNone(Base.save_to_file.__doc__)
+        self.assertGreater(len(Base.save_to_file.__doc__), 5)
+        self.assertIsNotNone(Base.from_json_string.__doc__)
+        self.assertGreater(len(Base.from_json_string.__doc__), 5)
+        self.assertIsNotNone(Base.create.__doc__)
+        self.assertGreater(len(Base.create.__doc__), 5)
+        self.assertIsNotNone(Base.load_from_file.__doc__)
+        self.assertGreater(len(Base.load_from_file.__doc__), 5)
+        self.assertIsNotNone(Base.save_to_file_csv.__doc__)
+        self.assertGreater(len(Base.save_to_file_csv.__doc__), 5)
+        self.assertIsNotNone(Base.load_from_file_csv.__doc__)
+        self.assertGreater(len(Base.load_from_file_csv.__doc__), 5)
+        self.assertIsNotNone(Base.draw.__doc__)
+        self.assertGreater(len(Base.draw.__doc__), 5)

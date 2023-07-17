@@ -141,3 +141,31 @@ class TestRectangle(TestCase):
         self.assertEqual(type(r1_dictionary), dict)
         self.r2.update(**r1_dictionary)
         self.assertNotEqual(self.r1, self.r2)
+
+    def test_documentations(self):
+        """
+        test_documentations
+        """
+        from models import rectangle
+        self.assertIsNotNone(rectangle.__doc__)
+        self.assertGreater(len(rectangle.__doc__), 5)
+        self.assertIsNotNone(Rectangle.__init__.__doc__)
+        self.assertGreater(len(Rectangle.__init__.__doc__), 5)
+        self.assertIsNotNone(Rectangle.width.__doc__)
+        self.assertGreater(len(Rectangle.width.__doc__), 5)
+        self.assertIsNotNone(Rectangle.height.__doc__)
+        self.assertGreater(len(Rectangle.height.__doc__), 5)
+        self.assertIsNotNone(Rectangle.x.__doc__)
+        self.assertGreater(len(Rectangle.x.__doc__), 5)
+        self.assertIsNotNone(Rectangle.y.__doc__)
+        self.assertGreater(len(Rectangle.y.__doc__), 5)
+        self.assertIsNotNone(Rectangle.area.__doc__)
+        self.assertGreater(len(Rectangle.area.__doc__), 5)
+        self.assertIsNotNone(Rectangle.display.__doc__)
+        self.assertGreater(len(Rectangle.display.__doc__), 5)
+        self.assertIsNotNone(Rectangle.__str__.__doc__)
+        self.assertGreater(len(Rectangle.__str__.__doc__), 5)
+        self.assertIsNotNone(Rectangle.update.__doc__)
+        self.assertGreater(len(Rectangle.update.__doc__), 5)
+        self.assertIsNotNone(Rectangle.to_dictionary.__doc__)
+        self.assertGreater(len(Rectangle.to_dictionary.__doc__), 5)
