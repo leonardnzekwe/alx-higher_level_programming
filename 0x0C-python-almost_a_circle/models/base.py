@@ -79,7 +79,7 @@ class Base:
         filename = cls.__name__ + ".json"
         with open(filename, "r", encoding="utf-8") as f:
             json_string = f.read()
-            list_objs = cls.from_json_string(json_string)
+            list_objs = Base.from_json_string(json_string)
         for obj in list_objs:
             instances.append(cls.create(**obj))
         return instances
