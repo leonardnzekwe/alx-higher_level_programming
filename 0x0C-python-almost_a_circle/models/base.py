@@ -104,3 +104,39 @@ class Base:
         for obj in list_objs:
             instances.append(cls.create(**obj))
         return instances
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """
+        draw method
+        """
+        import turtle
+
+        window = turtle.Screen()
+        window.bgcolor("white")
+        window.title("Drawing Rectangles and Squares")
+
+        pen = turtle.Turtle()
+        pen.speed(6)
+        pen.pensize(3)
+        pen.penup()
+
+        for rectangle in list_rectangles:
+            pen.goto(rectangle.x, rectangle.y)
+            pen.pendown()
+            pen.color("green")
+            for _ in range(2):
+                pen.forward(rectangle.width)
+                pen.right(90)
+                pen.forward(rectangle.height)
+                pen.right(90)
+            pen.penup()
+        for square in list_squares:
+            pen.goto(square.x, square.y)
+            pen.pendown()
+            pen.color("blue")
+            for _ in range(4):
+                pen.forward(square.size)
+                pen.right(90)
+            pen.penup()
+        turtle.done()
