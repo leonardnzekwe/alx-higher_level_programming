@@ -2,4 +2,4 @@
 -- Query to list all the tables of the current database
 SELECT TABLE_NAME
 FROM information_schema.TABLES
-WHERE TABLE_SCHEMA = DATABASE();
+WHERE TABLE_SCHEMA = (SELECT DATABASE());
