@@ -15,3 +15,4 @@ This is alx-higher_level_programming repository
 - Python - Inheritance
 - Python - Input/Output
 - Python - Almost a circle
+- SQL - Introduction
