@@ -16,3 +16,4 @@ This is alx-higher_level_programming repository
 - Python - Input/Output
 - Python - Almost a circle
 - SQL - Introduction
+- SQL - More queries
