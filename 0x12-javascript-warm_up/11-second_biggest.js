@@ -10,7 +10,7 @@ if (argLen === 0 || argLen === 1) {
   for (let i = 0; i < argLen; i++) {
     const idx = i + 2;
     const arg = Number(argv[idx]);
-    if (max < arg) {
+    if (max <= arg) {
       max = arg;
     }
   }
