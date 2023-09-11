@@ -2,15 +2,15 @@
 const process = require('process');
 const argv = process.argv;
 
-if (argv[2]) {
+try {
   const x = Number(argv[2]);
   if (!isNaN(x)) {
     for (let i = 0; i < x; i++) {
       console.log('C is fun');
     }
   } else {
-    console.log('Missing number of occurrences');
+    throw new Error('Error');
   }
-} else {
+} catch (err) {
   console.log('Missing number of occurrences');
 }
