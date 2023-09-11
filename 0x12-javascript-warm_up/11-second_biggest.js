@@ -3,16 +3,20 @@ const process = require('process');
 const argv = process.argv;
 const argLen = argv.length - 2;
 
-if (argLen === 0 || argLen === 1) {
+if (argLen <= 1) {
   console.log(0);
 } else {
-  let max = 0;
+  const args = [];
+
   for (let i = 0; i < argLen; i++) {
     const idx = i + 2;
-    const arg = Number(argv[idx]);
-    if (max <= arg) {
-      max = arg;
-    }
+    args.push(Number(argv[idx]));
   }
-  console.log(max);
+
+  function maxValue (max, currentValue) {
+    return max > currentValue ? max : currentValue;
+  }
+
+  const maxNum = args.reduce(maxValue, args[0]);
+  console.log(maxNum);
 }
