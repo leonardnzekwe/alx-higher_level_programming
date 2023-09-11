@@ -4,7 +4,7 @@ const argv = process.argv;
 const argLen = argv.length - 2;
 
 if (argLen === 0 || argLen === 1) {
-  console.log('0');
+  console.log(0);
 } else {
   let max = 0;
   for (let i = 0; i < argLen; i++) {
