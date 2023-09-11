@@ -14,9 +14,19 @@ if (argLen <= 1) {
   }
 
   function maxValue (max, currentValue) {
-    return max > currentValue ? max : currentValue;
+    return max >= currentValue ? max : currentValue;
   }
 
   const maxNum = args.reduce(maxValue, args[0]);
-  console.log(maxNum);
+
+  function secondMaxValue (secondMax, currentValue) {
+    if (currentValue !== maxNum && currentValue > secondMax) {
+      return currentValue;
+    }
+    return secondMax;
+  }
+
+  const secondMaxNum = args.reduce(secondMaxValue, Number.NEGATIVE_INFINITY);
+
+  console.log(secondMaxNum);
 }
