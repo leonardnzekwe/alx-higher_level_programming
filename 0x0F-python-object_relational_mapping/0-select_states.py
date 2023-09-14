@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bi/python3
 """
 0-select_states Module
 """

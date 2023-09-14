@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-7-model_state_fetch_all Module
+8-model_state_fetch_first Module
 """
 
 from sys import argv
@@ -27,10 +27,11 @@ def main():
         Session = sessionmaker(bind=engine)
         session = Session()
 
-        states = session.query(State).order_by(State.id).all()
-
-        for state in states:
-            print(f"{state.id}: {state.name}")
+        first_state = session.query(State).order_by(State.id).first()
+        if first_state:
+            print(f"{first_state.id}: {first_state.name}")
+        else:
+            print("Nothing")
 
 
 if __name__ == "__main__":
