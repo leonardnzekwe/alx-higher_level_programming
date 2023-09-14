@@ -1,6 +1,6 @@
 #!/usr/bi/python3
 """
-0-select_states Module
+a script that lists all states from the database hbtn_0e_0_usa
 """
 
 

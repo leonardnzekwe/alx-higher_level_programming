@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-8-model_state_fetch_first Module
+a script that prints the first State object from the database hbtn_0e_6_usa
 """
 
 from sys import argv
