@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-1-filter_states Module
+4-cities_by_state Module
 """
 
 
@@ -13,11 +13,10 @@ def main():
     main function
     """
     argc = len(argv) - 1
-    if (argc == 4):
+    if (argc == 3):
         mysql_user = argv[1]
         mysql_pwd = argv[2]
         db_name = argv[3]
-        state_name = argv[4]
 
         conn = MySQLdb.connect(
                 host="localhost", port=3306, user=mysql_user,
@@ -25,9 +24,13 @@ def main():
             )
         cur = conn.cursor()
         cur.execute(
-                "SELECT * FROM states WHERE name = %s ORDER BY states.id ASC",
-                (state_name,)
-            )
+            """
+            SELECT cities.id, cities.name, states.name
+            FROM cities
+            JOIN states ON states.id = cities.state_id
+            ORDER BY cities.id ASC
+            """
+        )
         query_rows = cur.fetchall()
         for row in query_rows:
             print(row)

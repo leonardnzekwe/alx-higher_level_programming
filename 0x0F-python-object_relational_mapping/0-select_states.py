@@ -23,7 +23,7 @@ def main():
                 passwd=mysql_pwd, db=db_name, charset="utf8"
             )
         cur = conn.cursor()
-        cur.execute("SELECT * FROM states ORDER BY id ASC")
+        cur.execute("SELECT * FROM states ORDER BY states.id ASC")
         query_rows = cur.fetchall()
         for row in query_rows:
             print(row)
