@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-a script that lists all State objects
-that contain the letter a from the database hbtn_0e_6_usa
+a script that prints the State object with the name passed
+as argument from the database hbtn_0e_6_usa
 """
 
 from sys import argv
@@ -15,10 +15,11 @@ def main():
     main function
     """
     argc = len(argv) - 1
-    if (argc == 3):
+    if (argc == 4):
         user = argv[1]
         pwd = argv[2]
         db = argv[3]
+        state_name = argv[4]
 
         engine = create_engine(
                 f'mysql+mysqldb://{user}:{pwd}@localhost:3306/{db}',
@@ -28,11 +29,11 @@ def main():
         Session = sessionmaker(bind=engine)
         session = Session()
 
-        states_with_a = session.query(State).filter(State.name.like('%a%'))
-        results = states_with_a.order_by(State.id).all()
-
-        for state in results:
-            print(f"{state.id}: {state.name}")
+        state = session.query(State).filter(State.name == state_name).first()
+        if state:
+            print(state.id)
+        else:
+            print("Not found")
 
         session.close()
 
