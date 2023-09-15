@@ -24,14 +24,15 @@ def main():
                 f'mysql+mysqldb://{user}:{pwd}@localhost:3306/{db}',
                 pool_pre_ping=True
             )
-        
+
         Base.metadata.create_all(engine)
 
         Session = sessionmaker(bind=engine)
         session = Session()
 
         new_state = State(name="California")
-        new_city = City(name="San Francisco", state=new_state)
+        new_city = City(name="San Francisco")
+        new_city.state = new_state
 
         session.add(new_state)
         session.add(new_city)
