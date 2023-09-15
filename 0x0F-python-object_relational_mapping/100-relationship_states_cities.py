@@ -24,6 +24,8 @@ def main():
                 f'mysql+mysqldb://{user}:{pwd}@localhost:3306/{db}',
                 pool_pre_ping=True
             )
+        
+        Base.metadata.create_all(engine)
 
         Session = sessionmaker(bind=engine)
         session = Session()
