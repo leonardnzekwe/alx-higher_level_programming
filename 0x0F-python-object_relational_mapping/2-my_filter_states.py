@@ -26,7 +26,7 @@ def main():
             )
         cur = conn.cursor()
         cur.execute(
-                "SELECT * FROM states WHERE name = '{}' ORDER BY states.id ASC"
+                "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC"
                 .format(state_name)
             )
         query_rows = cur.fetchall()
