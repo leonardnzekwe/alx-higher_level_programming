@@ -14,7 +14,7 @@ def main():
     main function
     """
     argc = len(argv) - 1
-    if (argc == 3):
+    if argc == 3:
         mysql_user = argv[1]
         mysql_pwd = argv[2]
         db_name = argv[3]
