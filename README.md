@@ -1,19 +1,23 @@
 # About Repo
-This is alx-higher_level_programming repository
+This is alx-higher level programming repository
 
 ## Repo Contents
-- Python - Hello, World
-- Python - if/else, loops, functions
-- Python - import & modules
-- Python - Data Structures: Lists, Tuples
-- Python - More Data Structures: Set, Dictionary
-- Python - Exceptions
-- Python - Classes and Objects
-- Python - Test-driven development
-- Python - More Classes and Objects
-- Python - Everything is object
-- Python - Inheritance
-- Python - Input/Output
-- Python - Almost a circle
-- SQL - Introduction
-- SQL - More queries
+- Python - hello world
+- Python - if else loops functions
+- Python - import modules
+- Python - data structures
+- Python - more data structures
+- Python - exceptions
+- Python - classes
+- Python - test driven development
+- Python - more classes
+- Python - everything is object
+- Python - inheritance
+- Python - input output
+- Python - almost a circle
+- SQL - introduction
+- SQL - more queries
+- Python - object relational mapping
+- Javascript - warm up
+- Javascript - objects scopes closures
+
