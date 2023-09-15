@@ -13,8 +13,7 @@ def main():
     """
     main function
     """
-    argc = len(argv) - 1
-    if (argc == 4):
+    try:
         mysql_user = argv[1]
         mysql_pwd = argv[2]
         db_name = argv[3]
@@ -46,6 +45,8 @@ def main():
             print()
         cur.close()
         conn.close()
+    except Exception as err:
+        print(f"Error: {err}")
 
 
 if __name__ == '__main__':

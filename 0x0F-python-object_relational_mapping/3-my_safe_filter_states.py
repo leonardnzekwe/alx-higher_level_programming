@@ -14,8 +14,7 @@ def main():
     """
     main function
     """
-    argc = len(argv) - 1
-    if (argc == 4):
+    try:
         mysql_user = argv[1]
         mysql_pwd = argv[2]
         db_name = argv[3]
@@ -27,7 +26,7 @@ def main():
             )
         cur = conn.cursor()
         cur.execute(
-                "SELECT * FROM states WHERE name = %s ORDER BY states.id ASC",
+                "SELECT * FROM states WHERE name = %s ORDER BY id ASC",
                 (state_name,)
             )
         query_rows = cur.fetchall()
@@ -35,6 +34,8 @@ def main():
             print(row)
         cur.close()
         conn.close()
+    except Exception as err:
+        print(f"Error: {err}")
 
 
 if __name__ == '__main__':

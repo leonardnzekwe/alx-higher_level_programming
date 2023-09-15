@@ -13,8 +13,7 @@ def main():
     """
     main function
     """
-    argc = len(argv) - 1
-    if (argc == 3):
+    try:
         user = argv[1]
         pwd = argv[2]
         db = argv[3]
@@ -34,6 +33,8 @@ def main():
             print("Nothing")
 
         session.close()
+    except Exception as err:
+        print(f"Error: {err}")
 
 
 if __name__ == "__main__":
