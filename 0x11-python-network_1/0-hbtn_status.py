@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """a Python script that fetches https://alx-intranet.hbtn.io/status"""
-from urllib import request
+from urllib import request, error
 
 
 def main():
@@ -19,7 +19,7 @@ def main():
             print("\t- content:", response_bytes)
             print("\t- utf8 content:", response_text)
 
-    except Exception as err:
+    except error.URLError as err:
         print("Error:", err)
 
 
