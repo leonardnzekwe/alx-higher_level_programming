@@ -18,8 +18,6 @@ if (process.argv.length === 4) {
       fs.writeFile(filePath, body, 'utf-8', (err) => {
         if (err) {
           console.error(err);
-        } else {
-          console.log(`Data from ${url} has been saved to ${filePath}`);
         }
       });
     }
